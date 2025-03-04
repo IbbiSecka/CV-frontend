@@ -1,0 +1,8 @@
+/* Import custom font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+/* Define a class for the custom font */
+.custom-font {
+  font-family: 'Roboto', sans-serif;
+  font-family:'Times New Roman', Times, serif;
+}
