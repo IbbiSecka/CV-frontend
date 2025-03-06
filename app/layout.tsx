@@ -19,9 +19,9 @@ export default function RootLayout({
         {/* Google Fonts */}
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet"/>
       </head>
-      <body>
+      <body className="bg-orange-50 text-white">
         <Navbar />
-        <main className="container mx-auto px-4 bg-orange-50">{children}</main>
+        <main className=" mx-auto px-4 ">{children}</main>
         <Footer />
       </body>
     </html>
