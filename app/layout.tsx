@@ -19,7 +19,7 @@ export default function RootLayout({
         {/* Google Fonts */}
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet"/>
       </head>
-      <body className="bg-[#eff9f7] text-[#1a1a1a]">
+      <body className="bg-white text-[#1a1a1a]">
         <Navbar />
         <main className=" mx-auto px-4  ">{children}</main>
         <Footer />

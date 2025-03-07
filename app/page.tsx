@@ -10,10 +10,10 @@ export default function Home() {
       {/* Main Container */}
       <div className="relative flex flex-col md:flex-row items-center  text-gray-900  p-8 max-w-3xl w-full">
         
-        {/* Left Section - Profile Card */}
-        <div className="bg-[#223e6e] border-2 border-[#000] shadow-2xl pt-6  flex flex-col items-center w-[280px] h-[375px] relative">
+        {/*  Left Section - Profile Card bg-[#efe6dc] */}
+        <div className="bg-[#f7f2ee] rounded-sm border-[#0000] shadow-2xl pt-6  flex flex-col items-center w-[280px] h-[375px] relative">
           {/* Profile Image */}
-          <div className="w-28 h-28 rounded-full overflow-hidden border  border-[#1e1226] shadow-md relative">
+          <div className="w-28 h-28 border-neutral-200 rounded-full overflow-hidden border   shadow-md relative">
             <Image 
               src="/images/ibbiimg.jpg" 
               alt="Profile" 
@@ -25,14 +25,14 @@ export default function Home() {
           </div>
 
           {/* Name & Title */}
-          <div className="text-[#e0e6ed]">
-            <h3 className=" p-6 mt-4 text-2xl font-extrabold font-garamond text-center ">Ibrahima Secka</h3>
-          <p  className="p-6 tracking-widest  font-lato mt-2 text">Software Developer</p>
+          
+          <h3 className="  text-[#000000] flex justify-center w-1 p-6 mt-4 text-2xl font-extrabold font-garamond text-center ">Ibrahima Secka</h3>
+          <p  className=" text-[#000000] p-6 tracking-widest  font-lato mt-2 text">Software Developer</p>
 
-          </div>
+          
           
           {/* Social Icons */}
-          <div className="mt-auto w-full h-8 bg-[#ffffff] border-2 border-[#000] flex  gap-4 p-2 justify-center">
+          <div className="mt-auto w-full h-8 bg-white   flex  gap-4 p-2 justify-center">
             <a 
             target="_blank" 
             rel="noopener noreferrer" 
@@ -55,21 +55,21 @@ export default function Home() {
 
         {/* Right Section - Text & Buttons */}
         <div className="pt-4 flex flex-col justify-center w-[300px] text-center md:text-left mt-6 md:mt-0 md:ml-8">
-          <h2 className="text-6xl font-bold font-montserrat text-[#121e78]">Hello</h2>
-          <p className="text-lg font-roboto mt-2 text-[#121e78]">Here's who I am & what I do</p>
+          <h2 className="text-6xl font-bold font-montserrat text-black">Hello</h2>
+          <p className="text-lg font-roboto mt-2 text-black">Here's who I am & what I do</p>
 
           {/* Buttons */}
           <div className="Buttons: text-[#d4a373]  mt-6 flex  gap-4">
-            <a href="/resume" className=" bg-[#121e78]  text-white px-5 py-2 rounded-lg font-semibold hover:bg-orange-50 hover:text-[#31185a] transition">
+            <a href="/resume" className=" bg-[#f7f2ee]  text-black px-5 py-2 rounded-lg font-semibold hover:bg-orange-50 hover:text-[#31185a] transition">
               Resume
             </a>
-            <a href="/projects" className="bg-[#121e78]  text-white px-5 py-2 rounded-lg font-semibold hover:bg-orange-50 hover:text-[#31185a] transition">
+            <a href="/projects" className="bg-[#f7f2ee]  text-black px-5 py-2 rounded-lg font-semibold hover:bg-orange-50 hover:text-[#31185a] transition">
               Projects
             </a>
           </div>
 
           {/* Extra Paragraph Text */}
-          <div className=" Paragraph-Text: text-sm text-[#121e78] mt-2 font-roboto">
+          <div className=" Paragraph-Text: text-sm text-black mt-2 font-roboto">
             <p className="mt-4 ">
             I'm a paragraph. Click here to add your own text and edit me. It’s easy.
             Just click “Edit Text” or double-click me to add your own content.
