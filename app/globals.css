@@ -22,5 +22,13 @@
     @apply bg-blue-500 text-white;
   }
 }
+body {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
 
 
