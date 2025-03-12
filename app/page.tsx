@@ -3,6 +3,26 @@ import { FaGithub, FaLinkedinIn,  } from "react-icons/fa";
 
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet"/>
+const greetings = ["Good morning  ", "Good afternoon", "Good evening", "Good night", "Wow you're up early (or late?)"];
+let hour = new Date().getHours();
+let greeting : string = "";
+if (hour > 0 && hour <= 2) 
+  {
+  greeting = greetings[3];
+}
+else if (hour > 2 && hour <= 6) {
+  greeting = greetings[4];
+}
+else if (hour > 6 && hour <= 12) {
+  greeting = greetings[0];
+
+}
+else if (hour > 12 && hour <= 18) {
+  greeting = greetings[1];
+} else if (hour > 18 && hour <= 24) {
+  greeting = greetings[2];
+}
+
 
 export default function Home() {
   return (
@@ -37,7 +57,7 @@ export default function Home() {
             target="_blank" 
             rel="noopener noreferrer" 
             href="https://www.linkedin.com/in/ibrahimasecka/?locale=no_NO" 
-            className="text-[#784212] hover:text-[#5a3010]  transition">
+            className="text-black hover:text-[#cbc3bd]  transition">
               
               <FaLinkedinIn />
               
@@ -45,7 +65,7 @@ export default function Home() {
             <a 
             target="_blank" 
             rel="noopener noreferrer"
-            href="https://github.com/IbbiSecka" className="text-[#784212] hover:text-[#5a3010] transition">
+            href="https://github.com/IbbiSecka" className="text-black hover:text-[#cbc3bd] transition">
               <FaGithub />
             </a>
             
@@ -55,11 +75,11 @@ export default function Home() {
 
         {/* Right Section - Text & Buttons */}
         <div className="pt-4 flex flex-col justify-center w-[300px] text-center md:text-left mt-6 md:mt-0 md:ml-8">
-          <h2 className="text-6xl font-bold font-montserrat text-black">Hello</h2>
+          <h2 className="text-5xl font-bold font-montserrat text-black">{greeting}</h2>
           <p className="text-lg font-roboto mt-2 text-black">Here's who I am & what I do</p>
 
           {/* Buttons */}
-          <div className="Buttons: text-[#d4a373]  mt-6 flex  gap-4">
+          <div className="Buttons: flex justify-center text-[#d4a373]  mt-6   gap-4">
             <a href="/resume" className=" bg-[#f7f2ee]  text-black px-5 py-2 rounded-lg font-semibold hover:bg-orange-50 hover:text-[#31185a] transition">
               Resume
             </a>
