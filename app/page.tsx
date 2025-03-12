@@ -1,10 +1,10 @@
+import InfoSection from "@/components/infoSections";
 import Image from "next/image";
 import { FaGithub, FaLinkedinIn,  } from "react-icons/fa";
 
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet"/>
 const greetings = ["Good morning  ", "Good afternoon", "Good evening", "Good night", "Wow you're up early (or late?)"];
-let hour = new Date().getHours();
+const hour = new Date().getHours();
 let greeting : string = "";
 if (hour > 0 && hour <= 2) 
   {
@@ -26,7 +26,7 @@ else if (hour > 12 && hour <= 18) {
 
 export default function Home() {
   return (
-    <div className=" flex items-center justify-center min-h-screen px-4 mt-auto">
+    <div className=" flex flex-col items-center justify-center min-h-screen px-4 mt-auto">
       {/* Main Container */}
       <div className="relative flex flex-col md:flex-row items-center  text-gray-900  p-8 max-w-3xl w-full">
         
@@ -80,10 +80,10 @@ export default function Home() {
 
           {/* Buttons */}
           <div className="Buttons: flex justify-center text-[#d4a373]  mt-6   gap-4">
-            <a href="/resume" className=" bg-[#f7f2ee]  text-black px-5 py-2 rounded-lg font-semibold hover:bg-orange-50 hover:text-[#31185a] transition">
+            <a href="#resume" className=" bg-[#f7f2ee]  text-black px-5 py-2 rounded-lg font-semibold hover:bg-orange-50 hover:text-[#31185a] transition">
               Resume
             </a>
-            <a href="/projects" className="bg-[#f7f2ee]  text-black px-5 py-2 rounded-lg font-semibold hover:bg-orange-50 hover:text-[#31185a] transition">
+            <a href="#projects" className="bg-[#f7f2ee]  text-black px-5 py-2 rounded-lg font-semibold hover:bg-orange-50 hover:text-[#31185a] transition">
               Projects
             </a>
           </div>
@@ -102,6 +102,7 @@ export default function Home() {
         </div>
 
       </div>
+      <InfoSection/>
     </div>
   );
 }
