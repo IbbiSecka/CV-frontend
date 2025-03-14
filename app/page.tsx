@@ -1,30 +1,42 @@
+"use client";
 import InfoSection from "@/components/infoSections";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedinIn,  } from "react-icons/fa";
 
-
-const greetings = ["Good morning  ", "Good afternoon", "Good evening", "Good night", "Wow you're up early (or late?)"];
-const hour = new Date().getHours();
-let greeting : string = "";
-if (hour > 0 && hour <= 2) 
-  {
-  greeting = greetings[3];
-}
-else if (hour > 2 && hour <= 6) {
-  greeting = greetings[4];
-}
-else if (hour > 6 && hour <= 12) {
-  greeting = greetings[0];
-
-}
-else if (hour > 12 && hour <= 18) {
-  greeting = greetings[1];
-} else if (hour > 18 && hour <= 24) {
-  greeting = greetings[2];
-}
-
+type GreetingType = {
+  greeting: string;
+  text: string;
+};
 
 export default function Home() {
+  
+const [greeting, setGreeting]  = useState<GreetingType>({greeting: "", text: ""}); ;
+
+useEffect(() => {
+  const greetings = [
+    {
+      greeting: "Good morning",
+      text: "Grab a coffee! ☕️"
+    },
+    { greeting: "Good afternoon", text: "Keep pushing forward! 💪" },
+    { greeting: "Good evening", text: "Relax and unwind! 🌆" },
+    { greeting: "Good night", text: "Time for a Good night's sleep (After checking out my website:) ) 😴" },
+    { greeting: "Wow, you're up early (or late?)", text: "Go back to sleep? 😅"}
+  ];
+  
+  const getGreeting = () => {
+    const hour = new Date().getHours();
+    if (hour > 0 && hour <= 2) return greetings[3];
+    if (hour > 2 && hour <= 6) return greetings[4];
+    if (hour > 6 && hour <= 12) return greetings[0];
+    if (hour > 12 && hour <= 18) return greetings[1];
+    return greetings[2];
+  };
+
+  setGreeting(getGreeting());
+}, []);
+
   return (
     <div className=" flex flex-col items-center justify-center min-h-screen px-4 mt-auto">
       {/* Main Container */}
@@ -75,8 +87,8 @@ export default function Home() {
 
         {/* Right Section - Text & Buttons */}
         <div className="pt-4 flex flex-col justify-center w-[300px] text-center md:text-left mt-6 md:mt-0 md:ml-8">
-          <h2 className="text-5xl font-bold font-montserrat text-black">{greeting}</h2>
-          <p className="text-lg font-roboto mt-2 text-black">Here's who I am & what I do</p>
+          <h2 className="text-5xl font-bold font-montserrat text-black">{greeting.greeting}</h2>
+          <p className="text-lg font-roboto mt-2 text-black">{greeting.text}</p>
 
           {/* Buttons */}
           <div className="Buttons: flex justify-center text-[#d4a373]  mt-6   gap-4">
@@ -91,11 +103,11 @@ export default function Home() {
           {/* Extra Paragraph Text */}
           <div className=" Paragraph-Text: text-sm text-black mt-2 font-roboto">
             <p className="mt-4 ">
-            I'm a paragraph. Click here to add your own text and edit me. It’s easy.
-            Just click “Edit Text” or double-click me to add your own content.
+            I'm a paragraph. Information (and fun facts), will appear here in the near future!.
+            
           </p>
           <p className="">
-            I’m a great place for you to tell a story and let your users know more about you.
+            If you like Game of Thrones, then this fun fact would make you laugh.
           </p>
           </div>
           
