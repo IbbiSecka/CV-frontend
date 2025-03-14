@@ -16,12 +16,12 @@ const [greeting, setGreeting]  = useState<GreetingType>({greeting: "", text: ""}
 useEffect(() => {
   const greetings = [
     {
-      greeting: "Good morning",
+      greeting: "Good morning ☀️ ",
       text: "Grab a coffee! ☕️"
     },
     { greeting: "Good afternoon", text: "Keep pushing forward! 💪" },
     { greeting: "Good evening", text: "Relax and unwind! 🌆" },
-    { greeting: "Good night", text: "Time for a Good night's sleep (After checking out my website:) ) 😴" },
+    { greeting: "Good night", text: "Time for a Good night's sleep 😴(After checking out my website 😁)" },
     { greeting: "Wow, you're up early (or late?)", text: "Go back to sleep? 😅"}
   ];
   
