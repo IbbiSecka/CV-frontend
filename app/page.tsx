@@ -27,7 +27,7 @@ useEffect(() => {
   
   const getGreeting = () => {
     const hour = new Date().getHours();
-    if (hour > 0 && hour <= 2) return greetings[3];
+    if (hour >= 0 && hour <= 2) return greetings[3];
     if (hour > 2 && hour < 6) return greetings[4];
     if (hour >= 6 && hour < 12) return greetings[0];
     if (hour >= 12 && hour < 18) return greetings[1];
