@@ -17,9 +17,9 @@ module.exports = {
         lg: "1024px",
       },
       fontFamily: {
-        'montserrat': ['Montserrat'],
-        'lato': ['Lato'],
-        'garamond': ['Garamond']
+        'montserrat': ['Montserrat', "Arial", "sans-serif"],
+        'lato': ['Lato', "Arial", "sans-serif"],
+        'garamond': ['Garamond', "Arial", "sans-serif"],
     }
     },
   },
