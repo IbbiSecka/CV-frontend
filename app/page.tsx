@@ -19,18 +19,18 @@ useEffect(() => {
       greeting: "Good morning ☀️ ",
       text: "Grab a coffee! ☕️"
     },
-    { greeting: "Good afternoon", text: "Keep pushing forward! 💪" },
-    { greeting: "Good evening", text: "Relax and unwind! 🌆" },
-    { greeting: "Good night", text: "Time for a Good night's sleep 😴(After checking out my website 😁)" },
-    { greeting: "Wow, you're up early (or late?)", text: "Go back to sleep? 😅"}
+    { greeting: "Good afternoon Champ 🏆", text: "Keep pushing forward! 💪" },
+    { greeting: "Good evening !", text: "Relax and unwind! 🌆" },
+    { greeting: "Good night 🌛", text: "Time for a Good night's sleep 😴(After checking out my website 😁)" },
+    { greeting: "Wow, you're up early (or late?) 😝", text: "Go back to sleep? 😅"}
   ];
   
   const getGreeting = () => {
     const hour = new Date().getHours();
-    if (hour > 0 && hour <= 2) return greetings[3];
-    if (hour > 2 && hour <= 6) return greetings[4];
-    if (hour > 6 && hour <= 12) return greetings[0];
-    if (hour > 12 && hour <= 18) return greetings[1];
+    if (hour >= 0 && hour <= 2) return greetings[3];
+    if (hour > 2 && hour < 6) return greetings[4];
+    if (hour >= 6 && hour < 12) return greetings[0];
+    if (hour >= 12 && hour < 18) return greetings[1];
     return greetings[2];
   };
 
