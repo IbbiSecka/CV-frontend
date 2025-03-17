@@ -22,7 +22,7 @@ useEffect(() => {
     { greeting: "Good afternoon Champ 🏆", text: "Keep pushing forward! 💪" },
     { greeting: "Good evening !", text: "Relax and unwind! 🌆" },
     { greeting: "Good night 🌛", text: "Time for a Good night's sleep 😴(After checking out my website 😁)" },
-    { greeting: "Wow, you're up early (or late?) 😝", text: "Go back to sleep? 😅"}
+    { greeting: "Wow, you're up early (or late?) ", text: "Go back to sleep? 😅"}
   ];
   
   const getGreeting = () => {
