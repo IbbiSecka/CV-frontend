@@ -47,9 +47,9 @@ useEffect(() => {
           {/* Profile Image */}
           <div className="w-28 h-28 border-neutral-200 rounded-full overflow-hidden border   shadow-md relative">
             <Image 
-              src="/images/ibbiimg.jpg" 
+              src="/images/ibbiimg.webp" 
               alt="Profile" 
-              
+              priority
               layout="fill" 
               objectFit="cover" 
               className="rounded-full"
