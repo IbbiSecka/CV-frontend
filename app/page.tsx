@@ -1,8 +1,10 @@
 "use client";
 import InfoSection from "@/components/infoSections";
 import Image from "next/image";
+import { ProfileService } from './services/profileService';
 import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedinIn,  } from "react-icons/fa";
+import { Profile } from "./types/ibbi";
 
 type GreetingType = {
   greeting: string;
@@ -11,7 +13,10 @@ type GreetingType = {
 
 export default function Home() {
   
-const [greeting, setGreeting]  = useState<GreetingType>({greeting: "", text: ""}); ;
+const [greeting, setGreeting]  = useState<GreetingType>({greeting: "", text: ""}); 
+const [profile, setProfile] = useState<Profile | null>(null); 
+const [error, setError] = useState<string | null>(null);
+const [loading, setLoading] = useState<boolean>(true);
 
 useEffect(() => {
   const greetings = [
@@ -33,7 +38,19 @@ useEffect(() => {
     if (hour >= 12 && hour < 18) return greetings[1];
     return greetings[2];
   };
+  const fetchProfile = async () => {
+    try {
+      const data = await ProfileService.getProfile();
+      console.log("Fetched profile data:", data);
+      setProfile(data);
+    } catch (error) {
+      setError("Failed to fetch profile data");
+    } finally {
+      setLoading(false);
+    }
+  }
 
+  fetchProfile();
   setGreeting(getGreeting());
 }, []);
 
