@@ -46,14 +46,14 @@ useEffect(() => {
         <div className="bg-[#f7f2ee] rounded-sm border-[#0000] shadow-2xl pt-6  flex flex-col items-center w-[280px] h-[375px] relative">
           {/* Profile Image */}
           <div className="w-28 h-28 border-neutral-200 rounded-full overflow-hidden border   shadow-md relative">
-            <Image 
-              src="/images/ibbiimg.jpg" 
-              alt="Profile" 
-              
-              layout="fill" 
-              objectFit="cover" 
-              className="rounded-full"
-            />
+             <Image 
+    src="/images/ibbiimg.webp" 
+    alt="Profile" 
+    fill
+    priority = {true}
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+    className="rounded-full object-cover"
+  />
           </div>
 
           {/* Name & Title */}

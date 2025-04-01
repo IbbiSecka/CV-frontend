@@ -20,7 +20,7 @@ module.exports = {
         'montserrat': ['Montserrat', "Arial", "sans-serif"],
         'lato': ['Lato', "Arial", "sans-serif"],
         'garamond': ['Garamond', "Arial", "sans-serif"],
-    }
+      },
     },
   },
   plugins: [],
