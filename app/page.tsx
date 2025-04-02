@@ -1,10 +1,10 @@
 "use client";
 import InfoSection from "@/components/infoSections";
 import Image from "next/image";
-import { ProfileService } from './services/profileService';
+//import { ProfileService } from './services/profileService';
 import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedinIn,  } from "react-icons/fa";
-import { Profile } from "./types/ibbi";
+//import { Profile } from "./types/ibbi";
 
 type GreetingType = {
   greeting: string;
@@ -124,7 +124,7 @@ useEffect(() => {
             
           </p>
           <p className="">
-            If you like Game of Thrones, then this fun fact would make you laugh.
+            To be continued...
           </p>
           </div>
           
