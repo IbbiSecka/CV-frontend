@@ -14,9 +14,9 @@ type GreetingType = {
 export default function Home() {
   
 const [greeting, setGreeting]  = useState<GreetingType>({greeting: "", text: ""}); 
-const [profile, setProfile] = useState<Profile | null>(null); 
-const [error, setError] = useState<string | null>(null);
-const [loading, setLoading] = useState<boolean>(true);
+//const [profile, setProfile] = useState<Profile | null>(null); 
+//const [error, setError] = useState<string | null>(null);
+//const [loading, setLoading] = useState<boolean>(true);
 
 useEffect(() => {
   const greetings = [
@@ -38,7 +38,7 @@ useEffect(() => {
     if (hour >= 12 && hour < 18) return greetings[1];
     return greetings[2];
   };
-  const fetchProfile = async () => {
+  /*const fetchProfile = async () => {
     try {
       const data = await ProfileService.getProfile();
       console.log("Fetched profile data:", data);
@@ -48,9 +48,9 @@ useEffect(() => {
     } finally {
       setLoading(false);
     }
-  }
+  }*/
 
-  fetchProfile();
+  //fetchProfile();
   setGreeting(getGreeting());
 }, []);
 
