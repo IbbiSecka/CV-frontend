@@ -15,6 +15,10 @@ export interface Resume {
   description: string;
   ibbiId: number;
 }
+export interface Social{
+    name: string;
+    link: string;
+}
 
 export interface Language {
   name: string;
@@ -40,4 +44,5 @@ export interface Profile {
   resumeExperiences: Resume[];
   languages: Language[];
   educations: Education[];
+  socials : Social[];
 }

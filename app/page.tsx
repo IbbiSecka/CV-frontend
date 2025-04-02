@@ -1,10 +1,9 @@
 "use client";
 import InfoSection from "@/components/infoSections";
 import Image from "next/image";
-//import { ProfileService } from './services/profileService';
 import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedinIn,  } from "react-icons/fa";
-//import { Profile } from "./types/ibbi";
+import getProfile from "./services/apiClient";
 
 type GreetingType = {
   greeting: string;
@@ -14,9 +13,8 @@ type GreetingType = {
 export default function Home() {
   
 const [greeting, setGreeting]  = useState<GreetingType>({greeting: "", text: ""}); 
-//const [profile, setProfile] = useState<Profile | null>(null); 
-//const [error, setError] = useState<string | null>(null);
-//const [loading, setLoading] = useState<boolean>(true);
+const profile = getProfile();
+
 
 useEffect(() => {
   const greetings = [
@@ -38,19 +36,7 @@ useEffect(() => {
     if (hour >= 12 && hour < 18) return greetings[1];
     return greetings[2];
   };
-  /*const fetchProfile = async () => {
-    try {
-      const data = await ProfileService.getProfile();
-      console.log("Fetched profile data:", data);
-      setProfile(data);
-    } catch (error) {
-      setError("Failed to fetch profile data");
-    } finally {
-      setLoading(false);
-    }
-  }*/
-
-  //fetchProfile();
+  console.log(profile)
   setGreeting(getGreeting());
 }, []);
 
@@ -75,7 +61,7 @@ useEffect(() => {
 
           {/* Name & Title */}
           
-          <h3 className="  text-[#000000] flex justify-center w-1 p-6 mt-4 text-2xl font-extrabold font-garamond text-center ">Ibrahima Secka</h3>
+          <h3 className="  text-[#000000] flex justify-center w-1 p-6 mt-4 text-2xl font-extrabold font-garamond text-center ">{profile?.firstName}</h3>
           <p  className=" text-[#000000] p-6 tracking-widest  font-lato mt-2 text">Software Developer</p>
 
           
@@ -85,7 +71,7 @@ useEffect(() => {
             <a 
             target="_blank" 
             rel="noopener noreferrer" 
-            href="https://www.linkedin.com/in/ibrahimasecka/?locale=no_NO" 
+            href={profile?.socials.find(social => social.name === "LinkedIn")?.link} 
             className="text-black hover:text-[#cbc3bd]  transition">
               
               <FaLinkedinIn />
@@ -94,7 +80,7 @@ useEffect(() => {
             <a 
             target="_blank" 
             rel="noopener noreferrer"
-            href="https://github.com/IbbiSecka" className="text-black hover:text-[#cbc3bd] transition">
+            href={profile?.socials.find(social => social.name === "GitHub")?.link} className="text-black hover:text-[#cbc3bd] transition">
               <FaGithub />
             </a>
             
@@ -120,11 +106,7 @@ useEffect(() => {
           {/* Extra Paragraph Text */}
           <div className=" Paragraph-Text: text-sm text-black mt-2 font-roboto">
             <p className="mt-4 ">
-            I'm a paragraph. Information (and fun facts), will appear here in the near future!.
-            
-          </p>
-          <p className="">
-            To be continued...
+              {profile?.description}
           </p>
           </div>
           
