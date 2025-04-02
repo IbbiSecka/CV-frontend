@@ -1,3 +1,7 @@
+import { useEffect, useState } from "react";
+import { ProfileService } from "./profileService";
+import { Profile } from "../types/ibbi";
+
 // app/services/apiClient.ts
 class ApiClient {
   private baseUrl: string;
@@ -89,4 +93,27 @@ class ApiError extends Error {
   }
 }
 
+const getProfile =  () => {
+
+const [profile, setProfile] = useState<Profile | null>(null); 
+
+useEffect(() => {
+
+const fetchProfile = async () => {
+    try {
+      const data = await ProfileService.getProfile();
+      console.log("Fetched profile data:", data);
+      setProfile(data);
+    } catch (error) {
+      return "Failed to fetch profile data";
+    } 
+  }
+fetchProfile();
+
+}, []);
+
+return profile;
+
+}
+export default getProfile;
 export const apiClient = new ApiClient();
