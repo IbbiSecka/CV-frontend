@@ -14,7 +14,8 @@ const eslintConfig = [
   {
     rules: {
       "@typescript-eslint/no-unused-vars": "warn", // Change error to warning
-      "react/no-unescaped-entities": "off" // Disable this rule completely
+      "react/no-unescaped-entities": "off", // Disable this rule completely
+      '@next/next/no-page-custom-font': 'off'
     },
   },
 ];
