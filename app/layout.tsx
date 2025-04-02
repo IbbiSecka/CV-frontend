@@ -19,12 +19,12 @@ const roboto = Roboto({
   variable: "--font-roboto",
   display: "swap",
 });
-const garamond = EB_Garamond({
+/*const garamond = EB_Garamond({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-garamond",
   display: "swap",
-});
+});*/
 
 export default function RootLayout({
   children,
