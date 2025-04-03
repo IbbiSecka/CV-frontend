@@ -3,10 +3,7 @@ import InfoSection from "@/components/infoSections";
 import useProfile from "./services/apiClient";
 import ProfileCard from "@/components/ProfileCard";
 
-type GreetingType = {
-  greeting: string;
-  text: string;
-};
+
 
 export default function Home() {
   
