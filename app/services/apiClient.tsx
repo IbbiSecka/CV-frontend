@@ -93,7 +93,7 @@ class ApiError extends Error {
   }
 }
 
-const getProfile =  () => {
+const useProfile =  () => {
 
 const [profile, setProfile] = useState<Profile | null>(null); 
 
@@ -115,5 +115,5 @@ fetchProfile();
 return profile;
 
 }
-export default getProfile;
+export default useProfile;
 export const apiClient = new ApiClient();

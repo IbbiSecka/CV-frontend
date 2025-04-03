@@ -3,7 +3,7 @@ import InfoSection from "@/components/infoSections";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedinIn,  } from "react-icons/fa";
-import getProfile from "./services/apiClient";
+import useProfile from "./services/apiClient";
 
 type GreetingType = {
   greeting: string;
@@ -13,7 +13,7 @@ type GreetingType = {
 export default function Home() {
   
 const [greeting, setGreeting]  = useState<GreetingType>({greeting: "", text: ""}); 
-const profile = getProfile();
+const profile = useProfile();
 
 
 useEffect(() => {
@@ -38,7 +38,7 @@ useEffect(() => {
   };
   console.log(profile)
   setGreeting(getGreeting());
-}, []);
+}, [profile]);
 
   return (
     <div className=" flex flex-col items-center justify-center min-h-screen px-4 mt-auto">
