@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { ProfileService } from "./profileService";
-import { Profile } from "../types/ibbi";
+
 
 // app/services/apiClient.ts
 class ApiClient {
+  
   private baseUrl: string;
   private defaultHeaders: Record<string, string>;
+  
 
   constructor() {
     // Determine the correct base URL based on environment
@@ -15,6 +15,7 @@ class ApiClient {
       // Add any API-specific headers here
     };
   }
+  
 
   private getBaseUrl(): string {
     // Use different env vars for dev/prod
@@ -27,6 +28,10 @@ class ApiClient {
       const envType = process.env.NODE_ENV === 'production' ? 'production' : 'development';
       throw new Error(`API base URL for ${envType} is not configured`);
     }
+    if (process.env.NODE_ENV !== 'production') {
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+}
+
 
     // Remove trailing slash if present
     return baseUrl.replace(/\/$/, '');
@@ -93,27 +98,5 @@ class ApiError extends Error {
   }
 }
 
-const useProfile =  () => {
 
-const [profile, setProfile] = useState<Profile | null>(null); 
-
-useEffect(() => {
-
-const fetchProfile = async () => {
-    try {
-      const data = await ProfileService.getProfile();
-      console.log("Fetched profile data:", data);
-      setProfile(data);
-    } catch (error) {
-      return "Failed to fetch profile data";
-    } 
-  }
-fetchProfile();
-
-}, []);
-
-return profile;
-
-}
-export default useProfile;
 export const apiClient = new ApiClient();

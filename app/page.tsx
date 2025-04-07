@@ -1,13 +1,12 @@
-"use client";
 import InfoSection from "@/components/infoSections";
-import useProfile from "./services/apiClient";
 import ProfileCard from "@/components/ProfileCard";
+import { ProfileService } from "./services/profileService";
 
 
 
-export default function Home() {
+export  default async function Home() {
   
-const profile = useProfile();
+const profile = await ProfileService.getProfile()
   return (
     <div className=" flex flex-col items-center justify-center min-h-screen px-4 mt-auto">
       {/* Main Container */}
