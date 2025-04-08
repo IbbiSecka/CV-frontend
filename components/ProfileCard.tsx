@@ -38,8 +38,7 @@ export default  function ProfileCard({ profile } : { profile: Profile | null }) 
 
   return (
     <>
-    <div className="relative flex flex-col md:flex-row items-center  text-gray-900  p-8 max-w-3xl w-full">
-        
+     <div className="relative flex flex-col md:flex-row items-center  text-gray-900  p-8 max-w-3xl w-full">
         {/*  Left Section - Profile Card bg-[#efe6dc] */}
         <div className="bg-[#f7f2ee] rounded-sm border-[#0000] shadow-2xl pt-6  flex flex-col items-center w-[280px] h-[375px] relative">
           {/* Profile Image */}
