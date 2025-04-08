@@ -1,4 +1,4 @@
-## Demo
+# Demo
 You can check out the live version of the CV at www.ibrahimasecka.com.
 
 ## Technologies Used
@@ -12,7 +12,7 @@ You can check out the live version of the CV at www.ibrahimasecka.com.
 If you’d like to run the project locally, you can follow these steps:
 
 ## Clone the repository:
-- git clone https://github.com/your-username/cv-project.git
+- git clone https://github.com/IbbiSecka/CV-frontend.git
 ## Install dependencies:
 - npm install (npm i)
 # or
@@ -22,4 +22,4 @@ If you’d like to run the project locally, you can follow these steps:
 - npm run dev
 # or
 - yarn dev
-# Then, visit http://localhost:3000 in your browser to see the project locally.
+## Then, visit http://localhost:3000 in your browser to see the project locally.
