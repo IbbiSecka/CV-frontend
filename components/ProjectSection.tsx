@@ -18,16 +18,17 @@ export default function ProjectSection( {projects} : ProjectSectionProps) {
 </div>
 )}*/ 
     return (
-          <section className="bg-[#f7f2ee] mt-10 flex flex-col items-center text-center w-full p-6 rounded-md shadow-md">
-      <h2 className="text-2xl font-bold mb-6 text-black">Projects</h2>
+        <>
+    <h2 className="text-2xl font-bold mb-6 text-center text-black">Projects</h2>
+    <section className="bg-[#f7f2ee]  flex flex-col items-center text-center w-full p-6 rounded-md ">
       {projects.length === 0 ? (
         <p className="text-gray-600">No projects to display.</p>
       ) : (
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white p-4 border border-gray-300 rounded-lg shadow-md w-full max-w-md"
+              className="bg-white p-4 border-collapse  border-gray-300 rounded-lg shadow-md w-full mb-6"
             >
               <h3 className="text-xl font-semibold text-black mb-2">{project.name}</h3>
             {/* project.img && */}
@@ -38,6 +39,6 @@ export default function ProjectSection( {projects} : ProjectSectionProps) {
         </div>
       )}
     </section>
-
+</>
     )
 }

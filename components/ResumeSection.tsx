@@ -9,15 +9,16 @@ type ResumeSectionProps = {
 export default function ResumeSection  ({ resume } : ResumeSectionProps) {
     
 return (
-    <section className="bg-[#f7f2ee] mt-10 flex flex-col items-center text-center w-full p-6 rounded-md shadow-md">
-      <h2 className="text-2xl font-bold mb-6 text-black">Resume</h2>
+    <>
+    <h2 className="text-2xl font-bold mb-6 text-center text-black">Resume</h2>
+    <section className="bg-[#f7f2ee]  flex flex-col items-center text-center w-full p-6 rounded-md ">
       {resume.length === 0 ? (
-        <p className="text-gray-600">No resume entries available.</p>
+        <p className="text-gray-600">Resume yet to come ...</p>
       ) : (
         resume.map((entry, index) => (
           <div
             key={index}
-            className="w-full max-w-2xl mb-6 p-4 bg-white border border-gray-300 rounded-md text-left shadow-md"
+            className="w-full  mb-6 p-4 bg-white border border-gray-300 rounded-md text-left shadow-md"
           >
             <h3 className="text-xl font-semibold text-black">{entry.position}</h3>
             <p className="text-gray-700">{entry.companyName} - {entry.companyLocation}</p>
@@ -27,5 +28,7 @@ return (
         ))
       )}
     </section>
+    </>
+
     )
 }
