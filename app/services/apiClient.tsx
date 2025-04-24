@@ -20,8 +20,8 @@ class ApiClient {
   private getBaseUrl(): string {
     // Use different env vars for dev/prod
     const baseUrl = process.env.NODE_ENV === 'production'
-      ? process.env.NEXT_PUBLIC_API_BASE_URL_PROD
-      : process.env.NEXT_PUBLIC_API_BASE_URL_DEV;
+      ? process.env.API_BASE_URL_PROD
+      : process.env.API_BASE_URL_DEV;
 
     // Validate URL exists
     if (!baseUrl) {

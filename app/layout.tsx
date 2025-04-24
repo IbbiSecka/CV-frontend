@@ -41,7 +41,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <link href= "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet"/>
       </head>
-      <body className="bg-white text-[#1a1a1a]">
+      <body className="bg-white text-[#1a1a1a]  h-screen">
         <Navbar />
         <main className=" mx-auto px-4  ">{children}</main>
         <Footer />
