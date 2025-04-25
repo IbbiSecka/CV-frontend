@@ -9,7 +9,9 @@ export class ProfileService {
 
   public static async getProfile(): Promise<Profile> {
     try {
-      return await apiClient.get<Profile>(this.PROFILE_ENDPOINT);
+      return await apiClient.get<Profile>(this.PROFILE_ENDPOINT, {
+        next: {revalidate: 60}, // Revalidate every 60 seconds
+      });
     } catch (error) {
       console.error('Failed to fetch profile:', error);
       throw error;
@@ -17,7 +19,9 @@ export class ProfileService {
   }
   public static async getResume(): Promise<Resume[]> {
     try {
-      return await apiClient.get<Resume[]>(this.RESUME_ENDPOINT);
+      return await apiClient.get<Resume[]>(this.RESUME_ENDPOINT,{
+        next: {revalidate: 60}, // Revalidate every 60 seconds
+      });
     } catch (error) {
       console.error('Failed to fetch resume:', error);
       throw error;
@@ -25,7 +29,9 @@ export class ProfileService {
   }
   public static async getProjects(): Promise<Project[]> {
     try {
-      return await apiClient.get<Project[]>(this.PROJECTS_ENDPOINT);
+      return await apiClient.get<Project[]>(this.PROJECTS_ENDPOINT,{
+        next: {revalidate: 60}, // Revalidate every 60 seconds
+      });
     } catch (error) {
       console.error('Failed to fetch projects:', error);
       throw error;

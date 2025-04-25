@@ -20,8 +20,8 @@ class ApiClient {
   private getBaseUrl(): string {
     // Use different env vars for dev/prod
     const baseUrl = process.env.NODE_ENV === 'production'
-      ? process.env.NEXT_PUBLIC_API_BASE_URL_PROD
-      : process.env.NEXT_PUBLIC_API_BASE_URL_DEV;
+      ? process.env.API_BASE_URL_PROD
+      : process.env.API_BASE_URL_DEV;
 
     // Validate URL exists
     if (!baseUrl) {
@@ -57,32 +57,38 @@ class ApiClient {
     }
   }
 
-  public async get<T>(endpoint: string, params?: Record<string, string>): Promise<T> {
-    try {
-      // Ensure endpoint starts with slash
-      const normalizedEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
-      const url = new URL(`${this.baseUrl}${normalizedEndpoint}`);
-      
-      if (params) {
-        Object.entries(params).forEach(([key, value]) => {
-          url.searchParams.append(key, value);
-        });
-      }
-
-      console.log(`Making request to: ${url.toString()}`); // Debug logging
-
-      const response = await fetch(url.toString(), {
-        method: 'GET',
-        headers: this.defaultHeaders,
-        cache: 'no-store',
-      });
-
-      return this.handleResponse<T>(response);
-    } catch (error) {
-      console.error('API request failed:', error);
-      throw error;
-    }
+  public async get<T>(
+  endpoint: string,
+  options?: {
+    params?: Record<string, string>;
+  } & RequestInit & {
+    next?: { revalidate?: number };
   }
+): Promise<T> {
+  try {
+    const normalizedEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+    const url = new URL(`${this.baseUrl}${normalizedEndpoint}`);
+
+    if (options?.params) {
+      Object.entries(options.params).forEach(([key, value]) => {
+        url.searchParams.append(key, value);
+      });
+    }
+
+    const { params, ...fetchOptions } = options ?? {};
+
+    const response = await fetch(url.toString(), {
+      method: 'GET',
+      headers: this.defaultHeaders,
+      ...fetchOptions, // this includes `next`, `cache`, etc.
+    });
+
+    return this.handleResponse<T>(response);
+  } catch (error) {
+    console.error('API request failed:', error);
+    throw error;
+  }
+}
 
   // Add post(), put(), delete() methods if needed later
 }
