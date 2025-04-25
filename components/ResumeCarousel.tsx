@@ -111,8 +111,9 @@ export default function ResumeCarousel({ resume }: { resume: Resume[] }) {
                 </div>
               </div>
               
-              <div className={`mt-2 sm:mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed overflow-hidden transition-all duration-300 ${expandedStates[index] ? 'max-h-72' : 'max-h-14 sm:max-h-16'}`}>
-                <p>{entry.description}</p>
+<div className={`mt-2 sm:mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed overflow-hidden transition-all duration-300 ${
+  expandedStates[index] ? 'max-h-[1000px]' : 'max-h-14 sm:max-h-16'
+}`}>                <p>{entry.description}</p>
               </div>
               
               {/* Read more / less button */}
