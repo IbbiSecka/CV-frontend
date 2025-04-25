@@ -57,8 +57,10 @@ export default function ProjectSection({ projects }: ProjectSectionProps) {
     });
   };
 
-  return (
+  return (         <> <h2 className="text-2xl font-bold mb-6 text-center text-black">Projects</h2>
+
     <div className="bg-[#f7f2ee] w-full max-w-4xl mx-auto rounded-lg shadow-md border border-gray-100">
+
       {/* Header */}
       <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-gray-100">
         <div className="flex items-center space-x-2">
@@ -148,11 +150,12 @@ export default function ProjectSection({ projects }: ProjectSectionProps) {
           <button
             key={index}
             onClick={() => scrollToIndex(index)}
-            className={`h-1 sm:h-1.5 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-black w-4 sm:w-5' : 'bg-gray-200 w-1 sm:w-1.5'}`}
+            className={`h-1 sm:h-1.5 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-black w-4 sm:w-5' : 'bg-gray-400 w-1 sm:w-1.5'}`}
             aria-label={`Go to project ${index + 1}`}
           />
         ))}
       </div>
     </div>
+    </>
   );
 }

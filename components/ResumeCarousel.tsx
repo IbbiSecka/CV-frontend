@@ -153,7 +153,7 @@ export default function ResumeCarousel({ resume }: { resume: Resume[] }) {
             key={index}
             onClick={() => scrollToIndex(index)}
             className={`h-1 sm:h-1.5 rounded-full transition-all duration-300 ${
-              index === currentIndex ? "bg-black w-4 sm:w-5" : "bg-gray-200 w-1 sm:w-1.5"
+              index === currentIndex ? "bg-black w-4 sm:w-5" : "bg-gray-400 w-1 sm:w-1.5"
             }`}
             aria-label={`Go to resume ${index + 1}`}
           />

@@ -22,19 +22,19 @@ export default function ResumeProjectToggler({ resume, projects }: ResumeProject
         </span>
         
         <div 
-          className={`w-16 h-8 flex items-center rounded-full p-1 transition-all duration-300 ease-in-out ${
+          className={`w-16 h-8 flex items-center rounded-full p-1 transition-all duration-300 ease-in-out border border-black ${
             activeTab === 'resume' ? 'bg-[#f7f2ee]' : 'bg-black'
           }`}
           onClick={() => setActiveTab(prev => prev === 'resume' ? 'projects' : 'resume')}
         >
-          <div className={`w-6 h-6 bg-white rounded-full shadow-md transform transition-all duration-300 ease-in-out ${
+          <div className={`w-6 h-6 bg-white rounded-full border border-black shadow-md transform transition-all duration-300 ease-in-out ${
             activeTab === 'projects' ? 'translate-x-8' : 'translate-x-0'
           }`}></div>
         </div>
         
         <span className={`text-sm font-medium p-2 z-10 ${activeTab === 'projects' && 'text-black'}`}>
-  Projects
-</span>
+        Projects
+        </span>
 
       </div>
 
